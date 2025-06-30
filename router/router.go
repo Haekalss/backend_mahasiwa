@@ -20,4 +20,5 @@ func SetupRoutes(app *fiber.App) {
 	app.Post("/register", handler.Register)
 	app.Post("/login", handler.Login)
 	app.Get("/docs/*", swagger.HandlerDefault)
+	//
 }
