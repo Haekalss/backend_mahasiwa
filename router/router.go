@@ -12,7 +12,7 @@ import (
 func SetupRoutes(app *fiber.App) {
 	api := app.Group("/api")
 	api.Get("/", handler.Homepage)
-	api.Get("/mahasiswa", middleware.Middlewares("admin"), handler.GetAllMahasiswa)
+	api.Get("/mahasiswa", handler.GetAllMahasiswa)
 	api.Get("/mahasiswa/:npm", middleware.Middlewares("admin"), handler.GetMahasiswaByNPM)
 	api.Post("/mahasiswa", middleware.Middlewares("admin"), handler.CreateMahasiswa)
 	api.Put("/mahasiswa/:npm", middleware.Middlewares("admin"), handler.UpdateMahasiswa)
